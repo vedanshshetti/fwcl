@@ -1,2 +1,4 @@
-# unit-converter
-A simple website which converts stuff, e.g. UTF-8 -> Base64, etc.
+
+# FOSS Component Library
+
+A forever free and open source component library for the web.
