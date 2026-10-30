@@ -1,6 +1,7 @@
 import ComponentCard from "../c/ComponentCard";
 import GridLayout from "../c/GridLayout";
 import Button from "../demo/Button/Button";
+import Progress from "../demo/Progress/Progress";
 
 export default function () {
   return (
@@ -20,6 +21,12 @@ export default function () {
             </>
           }
         />
+        <ComponentCard demo={
+          <>
+            <Progress styleVariant="none" value={17} max={100}/> 
+            <Progress styleVariant="polished" value={49} max={100}/>
+          </>
+        } name="Progress"/>
       </GridLayout>
     </div>
   );

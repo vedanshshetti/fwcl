@@ -3,3 +3,4 @@ out
 build
 .next
 dist
+.vercel
