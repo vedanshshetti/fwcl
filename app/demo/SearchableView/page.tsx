@@ -30,7 +30,7 @@ function Page() {
       <h1 className="text-3xl font-semibold">
         Searchable View - filter a list as you type.
       </h1>
-      <span className="my-2 rounded-xl bg-[#D22128] px-2 py-1">
+      <span className="my-2 rounded-xl bg-[#812878] px-2 py-1">
         License: <Link href="#license-text">Apache 2.0 (OSI-Approved)</Link>
       </span>
       <p className="text-sm!">
