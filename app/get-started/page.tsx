@@ -69,7 +69,7 @@ const components = [
 export default function Page() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-start gap-6 bg-background px-4 py-10 text-center font-sans text-foreground sm:px-6 sm:py-16">
-      <h1 className="max-w-4xl text-3xl font-bold sm:text-5xl lg:text-6xl">
+      <h1 className="max-w-4xl mt-2 text-3xl font-bold sm:text-5xl lg:text-6xl">
         Free Web Component Library
       </h1>
       <SearchableView
