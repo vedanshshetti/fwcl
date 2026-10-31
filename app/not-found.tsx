@@ -7,9 +7,9 @@ function notFound() {
         This page is about as real as Ron's love for Lavender.
       </h1>
       <p>
-        Don't get it? It's a Harry Potter joke. <br /> 
-        Anyway, maybe you made a typo? I don't know, but if you wanna go home,
-        <Link href={"/"}>just click here!</Link>
+        Don't get it? It's a Harry Potter joke. Anyway, maybe you made a typo?
+        <br /> I don't know, but if you wanna go home,
+        <Link href={"/"}> just click here!</Link>
       </p>
       <small className="mt-8 text-xs">
         HTTP/404 Not Found -{" "}
