@@ -28,6 +28,31 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <footer className="border-t border-black/10 px-6 py-8 text-sm text-foreground/70 dark:border-white/10">
+          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
+            <p>
+              © {new Date().getFullYear()} Vedansh Shetti {"<vedansh.shetti@gmail.com>"}. GNU AGPLv3 Licensed.
+            </p>
+            <nav aria-label="Footer navigation" className="flex gap-5">
+              <a
+                href="https://github.com/vedanshshetti/fwcl"
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors hover:text-foreground"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://www.gnu.org/licenses/agpl-3.0.html"
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors hover:text-foreground"
+              >
+                License
+              </a>
+            </nav>
+          </div>
+        </footer>
       </body>
     </html>
   );
