@@ -15,6 +15,9 @@ const components = [
         <Button variant="colourful-and-fun">
           Demo (variant: "colourful-and-fun")
         </Button>
+        <Button variant="destructive">
+          Demo (variant: "destructive")
+        </Button>
       </>
     ),
   },
