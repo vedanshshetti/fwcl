@@ -21,7 +21,7 @@ SOFTWARE.
  */
 import type { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 
-type Variant = "default" | "colourful-and-fun";
+type Variant = "default" | "colourful-and-fun" | "destructive";
 
 interface ButtonPropertiesInterface extends DetailedHTMLProps<
   ButtonHTMLAttributes<HTMLButtonElement>,
@@ -34,6 +34,8 @@ interface ButtonPropertiesInterface extends DetailedHTMLProps<
 const variantRecords: Record<Variant, string> = {
   default:
     "p-1 rounded-md border hover:px-2 hover:rounded-lg bg-zinc-50 dark:bg-zinc-900 transition-discrete duration-300",
+  destructive:
+    "p-1 rounded-md border hover:px-2.5 hover:rounded-lg bg-red-600 transition-discrete duration-300",
   "colourful-and-fun":
     "p-2 rounded-md border border-gray-200 dark:border-gray-700 hover:border-transparent hover:shadow-md transition-all duration-300 bg-linear-15 from-pink-500/90 from-10% to-cyan-700/90 to-70% text-gray-900 dark:text-white font-medium",
 };
@@ -81,7 +83,7 @@ SOFTWARE.
  */
 import type { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 
-type Variant = "default" | "colourful-and-fun";
+type Variant = "default" | "colourful-and-fun" | "destructive";
 
 interface ButtonPropertiesInterface extends DetailedHTMLProps<
   ButtonHTMLAttributes<HTMLButtonElement>,
@@ -94,6 +96,8 @@ interface ButtonPropertiesInterface extends DetailedHTMLProps<
 const variantRecords: Record<Variant, string> = {
   default:
     "p-1 rounded-md border hover:px-2 hover:rounded-lg bg-zinc-50 dark:bg-zinc-900 transition-discrete duration-300",
+  destructive:
+    "p-1 rounded-md border hover:px-2 hover:rounded-lg bg-red-600 transition-discrete duration-300",
   "colourful-and-fun":
     "p-2 rounded-md border border-gray-200 dark:border-gray-700 hover:border-transparent hover:shadow-md transition-all duration-300 bg-linear-15 from-pink-500/90 from-10% to-cyan-700/90 to-70% text-gray-900 dark:text-white font-medium",
 };
@@ -142,6 +146,8 @@ SOFTWARE.
 const variantRecords = {
   default:
     "p-1 rounded-md border hover:px-2 hover:rounded-lg bg-zinc-50 dark:bg-zinc-900 transition-discrete duration-300",
+  destructive:
+    "p-1 rounded-md border hover:px-2 hover:rounded-lg bg-red-600 transition-discrete duration-300",
   "colourful-and-fun":
     "p-2 rounded-md border border-gray-200 dark:border-gray-700 hover:border-transparent hover:shadow-md transition-all duration-300 bg-linear-15 from-pink-500/90 from-10% to-cyan-700/90 to-70% text-gray-900 dark:text-white font-medium",
 };

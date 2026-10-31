@@ -37,6 +37,10 @@ function Page() {
           <strong className="mt-2">Variant: "colourful-and-fun" {"->"}</strong>{" "}
           <Button variant="colourful-and-fun">Demo of C&F Variant</Button>
         </div>
+        <div>
+          <strong className="mt-2">Variant: "destructive" {"->"}</strong>{" "}
+          <Button variant="destructive">Demo of Destructive Variant</Button>
+        </div>
       </section>
       <section id="code" className={sectionClass}>
         <strong>Usage: </strong>
