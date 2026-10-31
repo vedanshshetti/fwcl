@@ -1,5 +1,5 @@
-import ComponentCard from "../c/ComponentCard";
-import GridLayout from "../c/GridLayout";
+import ComponentCard from "../components/ComponentCard";
+import GridLayout from "../components/GridLayout";
 import Button from "../demo/Button/Button";
 import Layout from "../demo/Layout/Layout";
 import Progress from "../demo/Progress/Progress";
