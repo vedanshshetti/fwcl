@@ -23,7 +23,7 @@ function Page() {
         License: <Link href={"#license-text"}>MIT (OSI-Approved)</Link>
       </span>
       <p className="text-sm!">
-        Building layouts isn't fun: Flexbox, Grid, Grid Columns, "1fr", it{" "}
+        Building layouts isn't fun: Flexbox, Grid, Grid Columns, " 1fr ", it{" "}
         <br />
         gets annoying. This should save you some time.
       </p>
