@@ -19,7 +19,7 @@ function Page() {
       <h1 className="text-3xl font-semibold">
         Layout - A quick and easy way to make layouts simpler.
       </h1>
-      <span className="rounded-xl px-2 py-1 my-2 bg-green-700">
+      <span className="rounded-xl px-2 py-1 my-2 bg-[#8b959e]">
         License: <Link href={"#license-text"}>MIT (OSI-Approved)</Link>
       </span>
       <p className="text-sm!">

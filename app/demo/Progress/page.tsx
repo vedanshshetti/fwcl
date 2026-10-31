@@ -17,7 +17,7 @@ function Page() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <h1 className="text-3xl font-semibold">Progress - A nice touch.</h1>
-      <span className="rounded-xl px-2 py-1 my-2 bg-green-700">
+      <span className="rounded-xl px-2 py-1 my-2 bg-[#8b959e]">
         License: <Link href={"#license-text"}>MIT (OSI-Approved)</Link>
       </span>
       <p className="text-sm!">
