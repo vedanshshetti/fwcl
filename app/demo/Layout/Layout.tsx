@@ -19,8 +19,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-import l from "@/app/licenses/MIT";
 import type { DetailedHTMLProps, HTMLAttributes } from "react";
+import l from "@/app/licenses/MIT";
 
 type LayoutTypePropertyType = "flex-row" | "flex-column" | "grid" | "custom";
 

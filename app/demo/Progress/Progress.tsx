@@ -20,8 +20,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
-import l from "@/app/licenses/MIT";
 import type { DetailedHTMLProps, ProgressHTMLAttributes } from "react";
+import l from "@/app/licenses/MIT";
 
 interface ProgressInterface extends DetailedHTMLProps<
   ProgressHTMLAttributes<HTMLProgressElement>,
