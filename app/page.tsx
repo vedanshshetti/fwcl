@@ -5,8 +5,8 @@ export default function Home() {
     <div className="flex flex-col min-h-screen items-center justify-center text-center space-y-2 bg-background text-foreground font-sans">
       <h1 className="text-6xl font-bold">Free Web Component Library</h1>
       <span className="text-lg">
-        ❤️ My promise to you: No ads, no malware, and{" "}
-        <strong>free forever</strong>.
+         My promise to you: No ads, no malware, and{" "}
+        <strong>free forever ❤️</strong>
       </span>
       <Link
         href="/get-started"
