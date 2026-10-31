@@ -4,7 +4,7 @@ export const copyToClipboard = async (
 ) => {
   try {
     await navigator.clipboard.writeText(text);
-    (onCompleteCb??(()=>console.log("completed")))();
+    (onCompleteCb ?? (() => console.log("completed")))();
   } catch (err) {
     console.error("Failed to copy: ", err);
   }
