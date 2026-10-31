@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "@/app/components";
 import { copyToClipboard } from "@/app/stuff";
-import { tsxTailwind } from "./Button";
+import { jsxTailwind, tsxTailwind } from "./Button";
 import LicenseText from "./LicenseText";
 
 function Page() {
@@ -50,6 +50,15 @@ export default function MyAwesomeButton() {
         </pre>
       </section>
       <section id="download" className={sectionClass}>
+        <Button
+          className={x ? "p-3" : ""}
+          variant="colourful-and-fun"
+          onClick={async () =>
+            await copyToClipboard(jsxTailwind, () => sX(true))
+          }
+        >
+          Copy source code (JavaScript + TailwindCSS)
+        </Button>
         <Button
           className={x ? "p-3" : ""}
           variant="colourful-and-fun"
