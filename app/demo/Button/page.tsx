@@ -1,18 +1,27 @@
 "use client";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { Button } from "@/app/components";
 import { copyToClipboard } from "@/app/stuff";
 import { tsxTailwind } from "./Button";
 import LicenseText from "./LicenseText";
 
-function page() {
+function Page() {
   const sectionClass = "flex flex-col mt-4 gap-4";
+  const [x, sX] = useState(false);
+  useEffect(() => {
+    if (!x) return;
+    const t = setTimeout(() => sX(false), 500);
+    return () => clearTimeout(t);
+  }, [x]);
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <h1 className="text-3xl font-semibold">
         Button - a simple but customisable button component.
       </h1>
-      <span className="rounded-xl px-2 py-1 my-2 bg-green-700">License: <Link href={"#license-text"}>MIT (OSI-Approved)</Link></span>
+      <span className="rounded-xl px-2 py-1 my-2 bg-green-700">
+        License: <Link href={"#license-text"}>MIT (OSI-Approved)</Link>
+      </span>
       <p className="text-sm!">
         The average button, while a simple thing, is a key component to building
         interactive web pages. <br />
@@ -41,14 +50,22 @@ export default function MyAwesomeButton() {
         </pre>
       </section>
       <section id="download" className={sectionClass}>
-            <Button variant="colourful-and-fun" onClick={async () => await copyToClipboard(tsxTailwind)}>Copy source code (TypeScript + TailwindCSS)</Button>
+        <Button
+          className={x ? "p-3" : ""}
+          variant="colourful-and-fun"
+          onClick={async () =>
+            await copyToClipboard(tsxTailwind, () => sX(true))
+          }
+        >
+          Copy source code (TypeScript + TailwindCSS)
+        </Button>
       </section>
       <section id="license-text" className={sectionClass}>
         <h3 className="text-xl font-bold">License Text: </h3>
-        <LicenseText/>
+        <LicenseText />
       </section>
     </div>
   );
 }
 
-export default page;
+export default Page;

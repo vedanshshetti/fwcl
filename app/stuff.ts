@@ -1,8 +1,10 @@
-export const copyToClipboard = async (text: string) => {
+export const copyToClipboard = async (
+  text: string,
+  onCompleteCb?: () => void,
+) => {
   try {
     await navigator.clipboard.writeText(text);
-    console.log("Copied to clipboard!");
-    // Optional: Show a toast notification here
+    (onCompleteCb??(()=>console.log("completed")))();
   } catch (err) {
     console.error("Failed to copy: ", err);
   }
