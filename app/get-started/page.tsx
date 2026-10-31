@@ -60,18 +60,22 @@ const components = [
         data={[{ name: "Burger" }, { name: "French Fries" }, { name: "Salad" }]}
         filterOn="name"
         mapCb={(i) => <li key={i.name}>{i.name}</li>}
-        wrapper={({children})=><ul>{children}</ul>}
-      />  
+        wrapper={({ children }) => <ul>{children}</ul>}
+      />
     ),
   },
 ];
 
 export default function Page() {
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center text-center space-y-2 bg-background text-foreground font-sans">
-      <h1 className="text-6xl font-bold">Free Web Component Library</h1>
-      <GridLayout>
-        {components.map((c) => (
+    <div className="flex min-h-screen flex-col items-center justify-start gap-6 bg-background px-4 py-10 text-center font-sans text-foreground sm:px-6 sm:py-16">
+      <h1 className="max-w-4xl text-3xl font-bold sm:text-5xl lg:text-6xl">
+        Free Web Component Library
+      </h1>
+      <SearchableView
+        data={components}
+        filterOn="name"
+        mapCb={(c) => (
           <ComponentCard
             name={c.name}
             desc={c.desc}
@@ -79,8 +83,10 @@ export default function Page() {
             key={c.id}
             demo={c.demo}
           />
-        ))}
-      </GridLayout>
+        )}
+        wrapper={GridLayout}
+        className="max-w-7xl!"
+      />
     </div>
   );
 }
