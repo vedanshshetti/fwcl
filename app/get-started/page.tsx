@@ -2,12 +2,25 @@
 import ComponentCard from "../components/ComponentCard";
 import GridLayout from "../components/GridLayout";
 import Button from "../demo/Button/Button";
+import Input from "../demo/Input/Input";
 import Layout from "../demo/Layout/Layout";
 import Progress from "../demo/Progress/Progress";
 import SearchableView from "../demo/SearchableView/SearchableView";
 
 const components = [
   {
+    name: "Input",
+    id: "1hf0hp63hdbclaz6",
+    href: "/demo/Input",
+    desc: "A small and simple Input component.",
+    demo: (
+      <>
+        <Input styleVariant="none"/>
+        <Input styleVariant="polished"/>
+      </>
+    ),
+  },
+    {
     name: "Button",
     id: "29dhj58fkj912dlx",
     href: "/demo/Button",
