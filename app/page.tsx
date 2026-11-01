@@ -3,9 +3,9 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="relative flex min-h-[calc(100vh-105px)] flex-col items-center justify-center overflow-hidden bg-background px-6 py-24 text-center font-sans text-foreground">
-      <div className="pointer-events-none absolute inset-0 -z-0 bg-[radial-gradient(circle_at_top,_rgba(34,197,94,0.12),_transparent_38%)]" />
+      <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_top,rgba(34,197,94,0.12),transparent_38%)]" />
       <div className="relative z-10 flex max-w-3xl flex-col items-center">
-        <span className="mb-6 rounded-full border border-foreground/10 bg-foreground/[0.03] px-4 py-2 font-mono text-xs font-medium uppercase tracking-[0.2em] text-foreground/60">
+        <span className="mb-6 rounded-full border border-foreground/10 bg-foreground/3 px-4 py-2 font-mono text-xs font-medium uppercase tracking-[0.2em] text-foreground/60">
           Open source · built for the web
         </span>
         <h1 className="text-balance text-5xl font-bold tracking-[-0.04em] sm:text-7xl">

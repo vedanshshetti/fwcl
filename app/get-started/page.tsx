@@ -82,9 +82,9 @@ const components = [
 export default function Page() {
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-start overflow-hidden bg-background px-4 py-12 font-sans text-foreground sm:px-6 sm:py-20">
-      <div className="pointer-events-none absolute left-1/2 top-0 -z-0 h-96 w-full max-w-5xl -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,_rgba(34,197,94,0.1),_transparent_65%)]" />
+      <div className="pointer-events-none absolute left-1/2 top-0 z-0 h-96 w-full max-w-5xl -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(34,197,94,0.1),transparent_65%)]" />
       <header className="relative z-10 mb-12 flex max-w-3xl flex-col items-center text-center">
-        <span className="mb-5 rounded-full border border-foreground/10 bg-foreground/[0.03] px-3 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-foreground/55">
+        <span className="mb-5 rounded-full border border-foreground/10 bg-foreground/3 px-3 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-foreground/55">
           Component library
         </span>
         <h1 className="text-balance text-4xl font-bold tracking-[-0.04em] sm:text-6xl">
