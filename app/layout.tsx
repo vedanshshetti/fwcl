@@ -28,14 +28,24 @@ export const metadata: Metadata = {
     "copy paste",
   ],
   creator: "Vedansh Shetti",
-  authors: [{ name: "Vedansh Shetti" }],
+  authors: [
+    { name: "Vedansh Shetti", url: "https://github.com/vedanshshetti" },
+  ],
   referrer: "strict-origin-when-cross-origin",
   openGraph: {
     title: "Free React.js Component Library",
-    description: "A forever free component library - open source and free for all.",
+    description:
+      "A forever free component library - open source and free for all.",
     type: "website",
     url: "https://fwcl.vedansh.me/",
-  }
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FWCL | Free React & Vanilla Component Library",
+    description:
+      "Forever free, open-source component library for modern web development.",
+    site: "https://fwcl.vedansh.me/",
+  },
 };
 
 export default function RootLayout({
