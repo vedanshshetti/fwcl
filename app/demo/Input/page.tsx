@@ -43,7 +43,7 @@ function Page() {
         <strong>Usage: </strong>
         <pre className="rounded-sm p-1.5 bg-zinc-50 dark:bg-zinc-900">
           {`
-import Input from "./input"; // Change as per where you put your Input component
+import Input from "./input"; // Change as needed
 export default function MyInputBar() {
   return <Input styleVariant="polished"/>
 }

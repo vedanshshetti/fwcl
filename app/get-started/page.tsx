@@ -15,12 +15,12 @@ const components = [
     desc: "A small and simple Input component.",
     demo: (
       <>
-        <Input styleVariant="none"/>
-        <Input styleVariant="polished"/>
+        <Input styleVariant="none" />
+        <Input styleVariant="polished" />
       </>
     ),
   },
-    {
+  {
     name: "Button",
     id: "29dhj58fkj912dlx",
     href: "/demo/Button",
@@ -81,10 +81,21 @@ const components = [
 
 export default function Page() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-start gap-6 bg-background px-4 py-10 text-center font-sans text-foreground sm:px-6 sm:py-16">
-      <h1 className="max-w-4xl mt-2 text-3xl font-bold sm:text-5xl lg:text-6xl">
-        Free Web Component Library
-      </h1>
+    <main className="relative flex min-h-screen flex-col items-center justify-start overflow-hidden bg-background px-4 py-12 font-sans text-foreground sm:px-6 sm:py-20">
+      <div className="pointer-events-none absolute left-1/2 top-0 -z-0 h-96 w-full max-w-5xl -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,_rgba(34,197,94,0.1),_transparent_65%)]" />
+      <header className="relative z-10 mb-12 flex max-w-3xl flex-col items-center text-center">
+        <span className="mb-5 rounded-full border border-foreground/10 bg-foreground/[0.03] px-3 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-foreground/55">
+          Component library
+        </span>
+        <h1 className="text-balance text-4xl font-bold tracking-[-0.04em] sm:text-6xl">
+          Start with something{" "}
+          <span className="text-green-700 dark:text-green-400">great.</span>
+        </h1>
+        <p className="mt-5 max-w-2xl text-pretty text-base leading-7 text-foreground/60 sm:text-lg">
+          Browse a handful of flexible, copy-friendly components. Search the
+          collection below and jump into any component to see how it works.
+        </p>
+      </header>
       <SearchableView
         data={components}
         filterOn="name"
@@ -98,8 +109,8 @@ export default function Page() {
           />
         )}
         wrapper={GridLayout}
-        className="max-w-7xl!"
+        className="relative z-10 w-full max-w-7xl!"
       />
-    </div>
+    </main>
   );
 }
