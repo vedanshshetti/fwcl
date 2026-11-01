@@ -96,7 +96,7 @@ export default function MySearchableView() {
             await copyToClipboard(jsxTailwind, () => setCopied(true))
           }
         >
-          Copy source code (JavaScript + TailwindCSS)
+          Copy source code (React.js + TailwindCSS)
         </Button>
         <Button
           className={copied ? "p-3" : ""}
@@ -105,7 +105,7 @@ export default function MySearchableView() {
             await copyToClipboard(tsxTailwind, () => setCopied(true))
           }
         >
-          Copy source code (TypeScript + TailwindCSS)
+          Copy source code (React.js + TypeScript + TailwindCSS)
         </Button>
         <Button
           className={copied ? "p-3" : ""}
