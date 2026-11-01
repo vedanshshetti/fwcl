@@ -15,6 +15,27 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Free Web Component Library",
   description: "A free, open source component library for the web.",
+  keywords: [
+    "react",
+    "component",
+    "open source",
+    "library",
+    "free",
+    "reactjs",
+    "tailwindcss",
+    "free forever",
+    "no ads",
+    "copy paste",
+  ],
+  creator: "Vedansh Shetti",
+  authors: [{ name: "Vedansh Shetti" }],
+  referrer: "strict-origin-when-cross-origin",
+  openGraph: {
+    title: "Free React.js Component Library",
+    description: "A forever free component library - open source and free for all.",
+    type: "website",
+    url: "https://fwcl.vedansh.me/",
+  }
 };
 
 export default function RootLayout({
@@ -31,7 +52,9 @@ export default function RootLayout({
         <footer className="border-t border-black/10 px-6 py-8 text-sm text-foreground/70 dark:border-white/10">
           <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
             <p>
-              © {new Date().getFullYear()} Vedansh Shetti {"<vedansh.shetti@gmail.com>"} - Licensed under the Terms and Conditions of the GNU Affero General Public License Version 3.
+              © {new Date().getFullYear()} Vedansh Shetti{" "}
+              {"<vedansh.shetti@gmail.com>"} - Licensed under the Terms and
+              Conditions of the GNU Affero General Public License Version 3.
             </p>
             <nav aria-label="Footer navigation" className="flex gap-5">
               <a
