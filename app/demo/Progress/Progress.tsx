@@ -77,3 +77,32 @@ function Progress({ styleVariant, ...props }) {
 }
 
 export default Progress;` as const;
+
+export const rawCss = `
+/**${l.trimEnd()}*/
+
+.progress-polished {
+  width: 100%;
+  height: 1rem;
+  border: 0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-color: #e5e7eb;
+}
+
+.progress-polished::-webkit-progress-bar {
+  border-radius: 0.75rem;
+  background-color: #e5e7eb;
+}
+
+.progress-polished::-webkit-progress-value,
+.progress-polished::-moz-progress-bar {
+  border-radius: 0.75rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .progress-polished,
+  .progress-polished::-webkit-progress-bar {
+    background-color: #111827;
+  }
+}` as const;

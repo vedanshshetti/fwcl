@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/app/components";
 import { copyToClipboard } from "@/app/stuff";
 import LicenseText from "./LicenseText";
-import Progress, { jsxTailwind, tsxTailwind } from "./Progress";
+import Progress, { jsxTailwind, rawCss, tsxTailwind } from "./Progress";
 
 function Page() {
   const sectionClass = "flex flex-col mt-4 gap-4";
@@ -54,6 +54,16 @@ export default function MyProgressBar() {
 `}
         </pre>
       </section>
+      <section id="vanilla" className={sectionClass}>
+        <strong>Vanilla HTML usage:</strong>
+        <pre className="rounded-sm p-1.5 bg-zinc-50 dark:bg-zinc-900">
+          {`<link rel="stylesheet" href="./progress.css" />
+
+<progress class="progress-polished" value="41" max="100">
+  41%
+</progress>`}
+        </pre>
+      </section>
       <section id="download" className={sectionClass}>
         <Button
           className={x ? "p-3" : ""}
@@ -72,6 +82,13 @@ export default function MyProgressBar() {
           }
         >
           Copy source code (TypeScript + TailwindCSS)
+        </Button>
+        <Button
+          className={x ? "p-3" : ""}
+          variant="colourful-and-fun"
+          onClick={async () => await copyToClipboard(rawCss, () => sX(true))}
+        >
+          Copy stylesheet (Vanilla CSS)
         </Button>
       </section>
       <section id="license-text" className={sectionClass}>

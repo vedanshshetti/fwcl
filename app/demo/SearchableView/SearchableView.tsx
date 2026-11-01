@@ -211,3 +211,45 @@ export default function SearchableView({
     </section>
   );
 }` as const;
+
+export const rawCss = `
+/**${l.trimEnd()}*/
+
+.searchable-view {
+  display: flex;
+  width: 100%;
+  max-width: 28rem;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.searchable-view__input {
+  border: 1px solid currentColor;
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+}
+
+.searchable-view__results {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+  grid-auto-rows: 1fr;
+}
+
+.searchable-view__empty {
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+@media (min-width: 640px) {
+  .searchable-view__results {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .searchable-view__results {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}` as const;

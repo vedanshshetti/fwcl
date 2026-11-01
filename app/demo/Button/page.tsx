@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "@/app/components";
 import { copyToClipboard } from "@/app/stuff";
-import { jsxTailwind, tsxTailwind } from "./Button";
+import { jsxTailwind, tsxTailwind, vanillaCSS } from "./Button";
 import LicenseText from "./LicenseText";
 
 function Page() {
@@ -53,6 +53,16 @@ export default function MyAwesomeButton() {
 `}
         </pre>
       </section>
+      <section id="vanilla" className={sectionClass}>
+        <strong>Vanilla HTML usage:</strong>
+        <pre className="rounded-sm p-1.5 bg-zinc-50 dark:bg-zinc-900">
+          {`<link rel="stylesheet" href="./button.css" />
+
+<button class="button-default">Default button</button>
+<button class="button-cf">Colourful button</button>
+<button class="button-destructive">Destructive button</button>`}
+        </pre>
+      </section>
       <section id="download" className={sectionClass}>
         <Button
           className={x ? "p-3" : ""}
@@ -71,6 +81,15 @@ export default function MyAwesomeButton() {
           }
         >
           Copy source code (TypeScript + TailwindCSS)
+        </Button>
+        <Button
+          className={x ? "p-3" : ""}
+          variant="colourful-and-fun"
+          onClick={async () =>
+            await copyToClipboard(vanillaCSS, () => sX(true))
+          }
+        >
+          Copy stylesheet (Vanilla CSS)
         </Button>
       </section>
       <section id="license-text" className={sectionClass}>

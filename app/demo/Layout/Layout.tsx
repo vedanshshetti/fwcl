@@ -99,3 +99,41 @@ const Layout = ({ type, className, ...props }) => (
 );
 
 export default Layout;` as const;
+
+export const rawCss = `
+/**${l.trimEnd()}*/
+
+.layout-flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.layout-flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+  grid-auto-rows: 1fr;
+}
+
+@media (min-width: 640px) {
+  .layout-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .layout-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}` as const;

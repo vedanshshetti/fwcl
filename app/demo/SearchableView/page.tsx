@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/app/components";
 import { copyToClipboard } from "@/app/stuff";
 import LicenseText from "./LicenseText";
-import SearchableView, { jsxTailwind, tsxTailwind } from "./SearchableView";
+import SearchableView, { jsxTailwind, rawCss, tsxTailwind } from "./SearchableView";
 
 const sampleData = [
   { name: "Apple" },
@@ -68,6 +68,26 @@ export default function MySearchableView() {
 `}
         </pre>
       </section>
+      <section id="vanilla" className={sectionClass}>
+        <strong>Vanilla HTML usage (requires extra scripts to actually search):</strong>
+        <pre className="rounded-sm bg-zinc-50 p-1.5 dark:bg-zinc-900">
+          {`<link rel="stylesheet" href="./searchable-view.css" />
+
+<section class="searchable-view">
+  <input
+    class="searchable-view__input"
+    type="search"
+    placeholder="Search items"
+    aria-label="Search items"
+  />
+  <div class="searchable-view__results">
+    <p>Apple</p>
+    <p>Banana</p>
+    <p>Mango</p>
+  </div>
+</section>`}
+        </pre>
+      </section>
       <section id="download" className={sectionClass}>
         <Button
           className={copied ? "p-3" : ""}
@@ -86,6 +106,13 @@ export default function MySearchableView() {
           }
         >
           Copy source code (TypeScript + TailwindCSS)
+        </Button>
+        <Button
+          className={copied ? "p-3" : ""}
+          variant="colourful-and-fun"
+          onClick={async () => await copyToClipboard(rawCss, () => setCopied(true))}
+        >
+          Copy stylesheet (Vanilla CSS)
         </Button>
       </section>
       <section id="license-text" className={sectionClass}>

@@ -132,3 +132,72 @@ function Button({ variant, className, ...props }) {
 }
 
 export default Button;` as const;
+
+export const vanillaCSS = `
+/*${l}*/
+.button-default {
+  padding: 0.25rem;
+  border-radius: 0.375rem;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #fafafa;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-behavior: allow-discrete;
+}
+
+.button-default:hover {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.button-destructive {
+  padding: 0.25rem;
+  border-radius: 0.375rem;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #dc2626;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-behavior: allow-discrete;
+}
+
+.button-destructive:hover {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.button-cf {
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e5e7eb;
+  background-image: linear-gradient(
+    15deg,
+    rgba(236, 72, 153, 0.9) 10%,
+    rgba(14, 116, 144, 0.9) 70% 
+  );
+  color: #111827; 
+  font-weight: 500;
+  transition-property: all;
+  transition-duration: 300ms;
+}
+
+.button-cf:hover {
+  border-color: transparent;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .button-cf {
+    border-color: #374151;
+    color: #ffffff;
+  }
+  .button-default {
+    background-color: #18181b;
+  }
+}`

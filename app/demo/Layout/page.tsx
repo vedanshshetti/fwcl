@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "@/app/components";
 import { copyToClipboard } from "@/app/stuff";
-import Layout, { jsxTailwind, tsxTailwind } from "./Layout";
+import Layout, { jsxTailwind, rawCss, tsxTailwind } from "./Layout";
 import LicenseText from "./LicenseText";
 
 function Page() {
@@ -117,6 +117,27 @@ export default function MyAwesomeLayout() {
 `}
         </pre>
       </section>
+      <section id="vanilla" className={sectionClass}>
+        <strong>Vanilla HTML usage:</strong>
+        <pre className="rounded-sm p-1.5 bg-zinc-50 dark:bg-zinc-900">
+          {`<link rel="stylesheet" href="./layout.css" />
+
+<div class="layout-flex-row">
+  <div>Item 1</div>
+  <div>Item 2</div>
+</div>
+
+<div class="layout-flex-column">
+  <div>Item 1</div>
+  <div>Item 2</div>
+</div>
+
+<div class="layout-grid">
+  <div>Item 1</div>
+  <div>Item 2</div>
+</div>`}
+        </pre>
+      </section>
       <section id="download" className={sectionClass}>
         <Button
           className={x ? "p-3" : ""}
@@ -135,6 +156,13 @@ export default function MyAwesomeLayout() {
           }
         >
           Copy source code (TypeScript + TailwindCSS)
+        </Button>
+        <Button
+          className={x ? "p-3" : ""}
+          variant="colourful-and-fun"
+          onClick={async () => await copyToClipboard(rawCss, () => sX(true))}
+        >
+          Copy stylesheet (Vanilla CSS)
         </Button>
       </section>
       <section id="license-text" className={sectionClass}>
