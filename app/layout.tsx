@@ -31,7 +31,7 @@ export default function RootLayout({
         <footer className="border-t border-black/10 px-6 py-8 text-sm text-foreground/70 dark:border-white/10">
           <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
             <p>
-              © {new Date().getFullYear()} Vedansh Shetti {"<vedansh.shetti@gmail.com>"} - Licensed under the Terms and Conditions of the GNU Affero General Public License v3.
+              © {new Date().getFullYear()} Vedansh Shetti {"<vedansh.shetti@gmail.com>"} - Licensed under the Terms and Conditions of the GNU Affero General Public License Version 3.
             </p>
             <nav aria-label="Footer navigation" className="flex gap-5">
               <a
