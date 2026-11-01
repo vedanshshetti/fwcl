@@ -22,17 +22,36 @@ import {
 } from "react";
 import l from "@/app/licenses/Apache2.0";
 
-interface SearchableViewPropertiesInterface<
-  T extends Record<string, unknown>,
-> extends Omit<
-  DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>,
-  "children"
-> {
+interface SearchableViewPropertiesInterface<T extends Record<string, unknown>>
+  extends Omit<
+    DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>,
+    "children"
+  > {
   data: ReadonlyArray<T>;
   filterOn: keyof T;
   mapCb: (o: T, i?: number) => ReactNode;
   wrapper?: ({ children }: { children: ReactNode }) => ReactNode;
 }
+
+const normalizeSearchText = (value: unknown) =>
+  String(value ?? "")
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .toLowerCase()
+    .replace(/[^\p{Letter}\p{Number}]+/gu, " ")
+    .trim();
+
+const matchesSearch = (value: unknown, searchTerm: string) => {
+  const normalizedValue = normalizeSearchText(value);
+  const searchTerms = normalizeSearchText(searchTerm)
+    .split(" ")
+    .filter(Boolean);
+
+  return (
+    searchTerms.length === 0 ||
+    searchTerms.every((term) => normalizedValue.includes(term))
+  );
+};
 
 export default function SearchableView<T extends Record<string, unknown>>({
   data,
@@ -47,20 +66,9 @@ export default function SearchableView<T extends Record<string, unknown>>({
   ...props
 }: SearchableViewPropertiesInterface<T>) {
   const [searchTerm, setSearchTerm] = useState("");
-  const normalizedSearchTerm = searchTerm.trim().toLowerCase();
-  const filteredData = data.filter((item) => {
-    const itemValue = String(item[filterOn] ?? "")
-      .toLowerCase()
-      .trim();
-    // Check if the whole phrase matches OR if any individual word matches
-    return (
-      itemValue.includes(normalizedSearchTerm) ||
-      normalizedSearchTerm.split(" ").some((word) => {
-        const cleanWord = word.toLowerCase().trim();
-        return cleanWord && itemValue.includes(cleanWord);
-      })
-    );
-  });
+  const filteredData = data.filter((item) =>
+    matchesSearch(item[filterOn], searchTerm),
+  );
   const Wrapper = wrapper;
   return (
     <section
@@ -107,6 +115,24 @@ interface SearchableViewPropertiesInterface<
   wrapper?: ({ children }: { children: ReactNode }) => ReactNode;
 }
 
+const normalizeSearchText = (value: unknown) =>
+  String(value ?? "")
+    .normalize("NFD")
+    .replace(/\\p{Diacritic}/gu, "")
+    .toLowerCase()
+    .replace(/[^\\p{Letter}\\p{Number}]+/gu, " ")
+    .trim();
+
+const matchesSearch = (value: unknown, searchTerm: string) => {
+  const normalizedValue = normalizeSearchText(value);
+  const searchTerms = normalizeSearchText(searchTerm).split(" ").filter(Boolean);
+
+  return (
+    searchTerms.length === 0 ||
+    searchTerms.every((term) => normalizedValue.includes(term))
+  );
+};
+
 export default function SearchableView<T extends Record<string, unknown>>({
   data,
   filterOn,
@@ -120,20 +146,9 @@ export default function SearchableView<T extends Record<string, unknown>>({
   ...props
 }: SearchableViewPropertiesInterface<T>) {
   const [searchTerm, setSearchTerm] = useState("");
-  const normalizedSearchTerm = searchTerm.trim().toLowerCase();
-  const filteredData = data.filter((item) => {
-    const itemValue = String(item[filterOn] ?? "")
-      .toLowerCase()
-      .trim();
-    // Check if the whole phrase matches OR if any individual word matches
-    return (
-      itemValue.includes(normalizedSearchTerm) ||
-      normalizedSearchTerm.split(" ").some((word) => {
-        const cleanWord = word.toLowerCase().trim();
-        return cleanWord && itemValue.includes(cleanWord);
-      })
-    );
-  });
+  const filteredData = data.filter((item) =>
+    matchesSearch(item[filterOn], searchTerm),
+  );
   const Wrapper = wrapper;
   return (
     <section
@@ -160,6 +175,7 @@ export default function SearchableView<T extends Record<string, unknown>>({
 export const jsxTailwind = `
 /**${l.trimEnd()}*/
 "use client";
+import { useState } from "react";
 import l from "@/app/licenses/Apache2.0";
 
 export default function SearchableView({
@@ -174,21 +190,28 @@ export default function SearchableView({
   className,
   ...props
 }) {
-  const [searchTerm, setSearchTerm] = useState("");
-  const normalizedSearchTerm = searchTerm.trim().toLowerCase();
-  const filteredData = data.filter((item) => {
-    const itemValue = String(item[filterOn] ?? "")
+  const normalizeSearchText = (value) =>
+    String(value ?? "")
+      .normalize("NFD")
+      .replace(/\\p{Diacritic}/gu, "")
       .toLowerCase()
+      .replace(/[^\\p{Letter}\\p{Number}]+/gu, " ")
       .trim();
-    // Check if the whole phrase matches OR if any individual word matches
+  const matchesSearch = (value, searchTerm) => {
+    const normalizedValue = normalizeSearchText(value);
+    const searchTerms = normalizeSearchText(searchTerm)
+      .split(" ")
+      .filter(Boolean);
+
     return (
-      itemValue.includes(normalizedSearchTerm) ||
-      normalizedSearchTerm.split(" ").some((word) => {
-        const cleanWord = word.toLowerCase().trim();
-        return cleanWord && itemValue.includes(cleanWord);
-      })
+      searchTerms.length === 0 ||
+      searchTerms.every((term) => normalizedValue.includes(term))
     );
-  });
+  };
+  const [searchTerm, setSearchTerm] = useState("");
+  const filteredData = data.filter((item) =>
+    matchesSearch(item[filterOn], searchTerm),
+  );
   const Wrapper = wrapper;
   return (
     <section
