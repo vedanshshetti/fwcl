@@ -62,8 +62,11 @@ export default function RootLayout({
         <footer className="border-t border-black/10 bg-foreground/2 px-6 py-8 text-sm text-foreground/60 dark:border-white/10">
           <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
             <p className="max-w-2xl leading-6">
-              © {new Date().getFullYear()} Vedansh Shetti · Licensed under the
-              GNU Affero General Public License v3.
+              © {new Date().getFullYear()} Vedansh Shetti{" "}
+              <a href="mailto:vedansh.shetti@gmail.com">
+                {"<vedansh.shetti@gmail.com>"}
+              </a>{" "}
+              · Licensed under the GNU Affero General Public License v3.
             </p>
             <nav aria-label="Footer navigation" className="flex gap-5">
               <a

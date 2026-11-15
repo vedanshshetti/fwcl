@@ -15,7 +15,7 @@ export default function Home() {
           </span>
         </h1>
         <p className="mt-7 max-w-xl text-pretty text-lg leading-8 text-foreground/65 sm:text-xl">
-          A small, thoughtful collection of React components you can copy,
+          A small, thoughtful collection of React / HTML components you can copy,
           customize, and make your own.
         </p>
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
@@ -23,7 +23,7 @@ export default function Home() {
             href="/get-started"
             className="rounded-full bg-green-700 px-6 py-3 font-semibold text-white shadow-lg shadow-green-700/20 transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-700/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700 dark:bg-green-500 dark:text-slate-950 dark:hover:bg-green-400"
           >
-            Explore the library
+            Explore the Library
           </Link>
           <a
             href="https://github.com/vedanshshetti/fwcl"
