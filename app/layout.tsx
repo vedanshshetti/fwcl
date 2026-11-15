@@ -31,9 +31,10 @@ export const metadata: Metadata = {
   authors: [
     { name: "Vedansh Shetti", url: "https://github.com/vedanshshetti" },
   ],
+  generator: "Next.js",
   referrer: "strict-origin-when-cross-origin",
   openGraph: {
-    title: "Free React.js Component Library",
+    title: "Free Web Component Library",
     description:
       "A forever free component library - open source and free for all.",
     type: "website",
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FWCL | Free React & Vanilla Component Library",
+    title: "FWCL | Free Web Component Library",
     description:
       "Forever free, open-source component library for modern web development.",
     site: "https://fwcl.vedansh.me/",
