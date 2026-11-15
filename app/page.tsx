@@ -35,7 +35,7 @@ export default function Home() {
           </a>
         </div>
         <p className="mt-12 font-mono text-xs uppercase tracking-[0.16em] text-foreground/40">
-          No ads · No Trackers · Free Forever
+          No ads · No Trackers · Free Forever - I promise
         </p>
       </div>
     </main>
