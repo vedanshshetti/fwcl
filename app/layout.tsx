@@ -22,6 +22,11 @@ export const metadata: Metadata = {
     "library",
     "free",
     "reactjs",
+    "web components",
+    "vanilla components",
+    "oss",
+    "nextjs components",
+    "foss",
     "tailwindcss",
     "free forever",
     "no ads",
@@ -41,7 +46,7 @@ export const metadata: Metadata = {
     url: "https://fwcl.vedansh.me/",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "FWCL | Free Web Component Library",
     description:
       "Forever free, open-source component library for modern web development.",
