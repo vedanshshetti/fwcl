@@ -83,7 +83,7 @@ export default function RootLayout({
                 rel="noreferrer"
                 className="font-medium transition-colors hover:text-foreground"
               >
-                License
+                License Text
               </a>
             </nav>
           </div>
